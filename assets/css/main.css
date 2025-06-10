@@ -1,0 +1,16 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+#bg-animated {
+    --gradient-color-1: #1c7de4;
+    --gradient-color-2: #1366b3;
+    --gradient-color-3: #15319f;
+    --gradient-color-4: #101f7e;
+    --gradient-speed: 0.000008;
+    height: 100%;
+    position: absolute;
+    transform: rotate(0deg) scale(1.5) translateY(0%);
+    width: 100%;
+    z-index: -1;
+}
