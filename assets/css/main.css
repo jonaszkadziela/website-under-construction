@@ -2,6 +2,16 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+.bg-container {
+    height: 100vh;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -2;
+}
+
 #bg-animated {
     --gradient-color-1: #1c7de4;
     --gradient-color-2: #1366b3;
