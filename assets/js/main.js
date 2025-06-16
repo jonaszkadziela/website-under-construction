@@ -13,6 +13,12 @@ document.addEventListener('alpine:init', function () {
             head: {
                 title: 'Example | Website under construction',
             },
+            language: {
+                change: 'Change language',
+                en: 'English',
+                hr: 'Croatian',
+                pl: 'Polish',
+            },
             main: {
                 title: 'Website under construction!',
                 description: 'The website will be made public soon',
@@ -20,12 +26,18 @@ document.addEventListener('alpine:init', function () {
             footer: {
                 designed: 'Designed and programmed with',
                 by: 'by',
-                author: 'Jonasz Kadziela'
+                author: 'Jonasz Kadziela',
             },
         },
         hr: {
             head: {
                 title: 'Primjer | Web stranica u izradi',
+            },
+            language: {
+                change: 'Promijeni jezik',
+                en: 'Engleski (English)',
+                hr: 'Hrvatski (Croatian)',
+                pl: 'Poljski (Polish)',
             },
             main: {
                 title: 'Web stranica u izradi!',
@@ -34,12 +46,18 @@ document.addEventListener('alpine:init', function () {
             footer: {
                 designed: 'Dizajnirano i programirano s',
                 by: 'od',
-                author: 'Jonasz Kadziela'
+                author: 'Jonasz Kadziela',
             },
         },
         pl: {
             head: {
                 title: 'Przykład | Strona w trakcie budowy',
+            },
+            language: {
+                change: 'Zmień język',
+                en: 'Angielski (English)',
+                hr: 'Chorwacki (Croatian)',
+                pl: 'Polski (Polish)',
             },
             main: {
                 title: 'Strona w trakcie budowy!',
@@ -48,7 +66,7 @@ document.addEventListener('alpine:init', function () {
             footer: {
                 designed: 'Zaprojektowane i zaprogramowane z',
                 by: 'przez',
-                author: 'Jonasza Kądzielę'
+                author: 'Jonasza Kądzielę',
             },
         },
     })

@@ -10,22 +10,66 @@
         <meta name="description" content="Website under construction">
         <meta name="keywords" content="website, under, construction">
         <meta name="author" content="Jonasz Kądziela">
-        <link href="assets/images/favicon.png?v=1" rel="shortcut icon" type="image/png">
+        <link href="assets/images/favicon.png?v=2" rel="shortcut icon" type="image/png">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-        <link href="assets/css/main.css?v=1" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" rel="stylesheet">
+        <link href="assets/css/main.css?v=2" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" defer></script>
-        <script src="assets/js/main.js?v=1"></script>
+        <script src="assets/js/main.js?v=2"></script>
     </head>
     <body class="bg-[#15319f] dark:text-gray-200 flex flex-col h-full min-h-dvh min-w-[320px] overflow-hidden text-gray-800">
         <main class="flex flex-col flex-grow-1 items-center justify-center">
+            <div class="fixed flex gap-2 mr-4 mt-4 right-0 top-0 z-50">
+                <div x-data="{ open: false }"
+                     @click.outside="open = false"
+                     @close.stop="open = false"
+                >
+                    <div @click="open = !open">
+                        <button class="backdrop-blur-sm bg-white/75 cursor-pointer dark:bg-black/75 hover:shadow-2xl inline-flex px-5 py-3 rounded-2xl shadow-lg transition-shadow">
+                            <span class="mr-2">
+                                <i class="fa-solid fa-earth-europe"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div x-show="open"
+                         x-transition:enter="ease-out duration-200"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute end-0 hover:shadow-2xl mt-2 origin-top-right rounded-2xl shadow-lg transition w-64"
+                         style="display: none;"
+                    >
+                        <div class="backdrop-blur-sm bg-white/75 dark:bg-black/75 px-6 py-4 rounded-2xl">
+                            <div x-text="$store.trans[$store.lang].language.change"
+                                 class="font-medium"
+                            ></div>
+                            <div class="border-t my-1"></div>
+                            <template x-for="lang in Object.keys($store.trans)">
+                                <button class="cursor-pointer block"
+                                        type="button"
+                                        @click="Alpine.store('lang', lang)"
+                                >
+                                    <i :class="$store.lang === lang ? 'fa-solid' : 'fa-regular'"
+                                       class="fa-flag mr-1"
+                                    ></i>
+                                    <span x-text="$store.trans[$store.lang].language[lang]"></span>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="backdrop-blur-sm bg-white/75 dark:bg-black/75 hover:shadow-2xl m-8 max-w-xl p-8 rounded-2xl shadow-lg transition-shadow">
                 <div class="flex flex-col gap-8 md:flex-row">
                     <div class="flex items-center justify-center text-6xl">
-                        <svg class="h-16" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                            <path fill="currentColor" d="M208 64a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM9.8 214.8c5.1-12.2 19.1-18 31.4-12.9L60.7 210l22.9-38.1C99.9 144.6 129.3 128 161 128c51.4 0 97 32.9 113.3 81.7l34.6 103.7 79.3 33.1 34.2-45.6c6.4-8.5 16.6-13.3 27.2-12.8s20.3 6.4 25.8 15.5l96 160c5.9 9.9 6.1 22.2 .4 32.2s-16.3 16.2-27.8 16.2l-256 0c-11.1 0-21.4-5.7-27.2-15.2s-6.4-21.2-1.4-31.1l16-32c5.4-10.8 16.5-17.7 28.6-17.7l32 0 22.5-30L22.8 246.2c-12.2-5.1-18-19.1-12.9-31.4zm82.8 91.8l112 48c11.8 5 19.4 16.6 19.4 29.4l0 96c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-74.9-60.6-26-37 111c-5.6 16.8-23.7 25.8-40.5 20.2S-3.9 486.6 1.6 469.9l48-144 11-33 32 13.7z"></path>
-                        </svg>
+                        <i class="fa-solid fa-person-digging"></i>
                     </div>
                     <div class="md:text-left text-center">
                         <h3 x-text="$store.trans[$store.lang].main.title"
