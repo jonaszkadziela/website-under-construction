@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('alpine:init', function () {
     Alpine.store('lang', 'en')
-    Alpine.store('domain', 'example.local')
+    Alpine.store('contactEmail', 'contact@acme.local')
     Alpine.store('authorDomain', 'jonaszkadziela.pl')
     Alpine.store('trans', {
         en: {
             head: {
-                title: 'Example | Website under construction',
+                title: 'Acme | Website under construction',
             },
             language: {
                 change: 'Change language',
@@ -22,6 +22,7 @@ document.addEventListener('alpine:init', function () {
             main: {
                 title: 'Website under construction!',
                 description: 'The website will be made public soon',
+                email: 'You can reach us at',
             },
             footer: {
                 designed: 'Designed and programmed with',
@@ -31,7 +32,7 @@ document.addEventListener('alpine:init', function () {
         },
         hr: {
             head: {
-                title: 'Primjer | Web stranica u izradi',
+                title: 'Acme | Web stranica u izradi',
             },
             language: {
                 change: 'Promijeni jezik',
@@ -42,6 +43,7 @@ document.addEventListener('alpine:init', function () {
             main: {
                 title: 'Web stranica u izradi!',
                 description: 'Web stranica će uskoro biti javno dostupna',
+                email: 'Možete nas kontaktirati na',
             },
             footer: {
                 designed: 'Dizajnirano i programirano s',
@@ -51,7 +53,7 @@ document.addEventListener('alpine:init', function () {
         },
         pl: {
             head: {
-                title: 'Przykład | Strona w trakcie budowy',
+                title: 'Acme | Strona w trakcie budowy',
             },
             language: {
                 change: 'Zmień język',
@@ -62,6 +64,7 @@ document.addEventListener('alpine:init', function () {
             main: {
                 title: 'Strona w trakcie budowy!',
                 description: 'Wkrótce zostanie upubliczniona strona internetowa',
+                email: 'Napisz do nas na',
             },
             footer: {
                 designed: 'Zaprojektowane i zaprogramowane z',
